@@ -28040,7 +28040,7 @@ break}case 1:return A.O(q,r)}})
 return A.P($async$mj,r)},
 a_M(){var s=0,r=A.Q(t.H)
 var $async$a_M=A.L(function(a,b){if(a===1)return A.N(b,r)
-while(true)switch(s){case 0:document.cookie="auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT"
+while(true)switch(s){case 0:document.cookie="auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=adminofsocm.store"
 return A.O(null,r)}})
 return A.P($async$a_M,r)},
 aI4(a){var s,r,q,p,o,n,m=document.cookie

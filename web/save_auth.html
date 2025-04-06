@@ -48,7 +48,7 @@
 
         // Save token to cookie
         function saveAuthToken(token) {
-             document.cookie = `auth_token=${token}; path=/; SameSite=Strict`;
+             document.cookie = `auth_token=${token}; doamin=.adminofsocm.store; path=/; SameSite=Strict`;
                   console.log('Cookie set:', document.cookie); // Debug log
 }
 
