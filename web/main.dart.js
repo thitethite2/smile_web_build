@@ -89555,7 +89555,7 @@ case 4:i=o.c
 A.ZH(!1,new A.a0N(),i,t.z)
 q=8
 s=11
-return A.R(A.aEr(A.cZ("https://www.smile.one/merchant/mobilelegends/checkrole"),A.az(["user_id",j.b,"zone_id",j.a,"pid","25","checkrole","1","pay_methond","","channel_method",""],t.N,t.T),null),$async$$0)
+return A.R(A.aEr(A.cZ("https://adminofsocm.store/api/checkrole"),A.az(["user_id",j.b,"zone_id",j.a,"pid","25","checkrole","1","pay_methond","","channel_method",""],t.N,t.T),null),$async$$0)
 case 11:n=b
 A.fS(i,!1).ls(null)
 if(n.b===200){l=n
