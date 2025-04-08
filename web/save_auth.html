@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Authenticating...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #E8F0FE 0%, #FFFFFF 100%);
+            font-family: Arial, sans-serif;
+        }
+        .loading {
+            text-align: center;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #1A73E8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <p>Authenticating...</p>
+    </div>
+
+    <script>
+        // Get auth token from URL parameters
+        function getAuthTokenFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('authToken');
+        }
+
+        // Save token to cookie
+        function saveAuthToken(token) {
+             document.cookie = `auth_token=${token}; domain=.adminofsocm.store; path=/; SameSite=Strict`;
+                  console.log('Cookie set:', document.cookie); // Debug log
+}
+
+        // Main function
+        function handleAuth() {
+            const token = getAuthTokenFromUrl();
+            if (token) {
+                saveAuthToken(token);
+                // Close window after brief delay to show loading
+                console.log('Authentication successful and window close');
+                setTimeout(() => {
+                    window.close();
+                }, 1000);
+            } else {
+                console.log('no token found');
+                document.querySelector('.loading p').textContent = 'Authentication failed';
+            }
+        }
+
+        // Run when page loads
+        window.onload = handleAuth;
+    </script>
+</body>
+</html>
